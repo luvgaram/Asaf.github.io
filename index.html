@@ -19,30 +19,32 @@
   <br>
   <br>  <br>
   <br>
-  <!-- <a href="https://yogiyo.onelink.me/BlI7?pid=bridge_page" >Naver App link test</a> -->
-  <!-- <div style=" background-color: gold; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">with parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div>
-  <br> -->
+  <div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">only div with windows.location.href to onelink</div>
   <br>
-  <div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">그냥 onclick으로 windows.location.href</div>
+  <br>  
   <br>
   <br>
   <a href="#" target="_blank">
-    <div style=" background-color: blue; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://www.google.com';">그냥 onclick으로 windows.location.href</div>
+    <div style=" background-color: blue; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">div inside a with windows.location.href to onelink</div>
+  </a>
+  <a href="#" target="_blank">
+    <div style=" background-color: blue; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://www.google.com';">div inside a with windows.location.href to "Google"</div>
   </a>
   <br>
   <a href="#" target="_blank">
      <div class="Promotion_btn" onclick="clickLink()">
-       <div class="btn_content">a href랑 같이</div>
+       <div class="btn_content">div inside a with Yogiyo's JS script</div>
      </div>
   </a>
   <br>
   <br>
   <div class="Promotion_btn" onclick="clickLink()">
-    <div class="btn_content">a href 없이</div>
+    <div class="btn_content">only div with Yogiyo's JS script</div>
   </div>
   <br>
   <br>
-
+  
+<!-- Yogiyo's JS script -->
   <script type="text/javascript">
       var urlParam = window.location.search.replace(/^\?/, '');
       if (window.location.search.indexOf('referrer=') >= 0) {
