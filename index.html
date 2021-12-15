@@ -20,16 +20,22 @@
 <br>
 <!-- <a href="https://yogiyo.onelink.me/BlI7?pid=bridge_page" >Naver App link test</a> -->
 <!-- <div style=" background-color: gold; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">with parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div>
+<br> -->
 <br>
-<br>
-<div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">without parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div> -->
+<div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">그냥 onclick으로 windows.location.href</div>
 <br>
 <br>
 <a href="#" target="_blank">
       <div class="Promotion_btn" onclick="clickLink()">
-        <div class="btn_content">요기요 앱 다운로드</div>
+        <div class="btn_content">a href랑 같이</div>
       </div>
 </a>
+<br>
+<br>
+  <div class="Promotion_btn" onclick="clickLink()">
+  <div class="btn_content">a href 없이</div>
+</div>
+
   <script type="text/javascript">
       var urlParam = window.location.search.replace(/^\?/, '');
       if (window.location.search.indexOf('referrer=') >= 0) {
