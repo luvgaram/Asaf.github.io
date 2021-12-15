@@ -17,16 +17,52 @@
 <br>  <br>
 <br>
 <!-- <a href="https://yogiyo.onelink.me/BlI7?pid=bridge_page" >Naver App link test</a> -->
-<div style=" background-color: gold; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">with parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div>
+<!-- <div style=" background-color: gold; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">with parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=test&af_adset=test&af_keywords=test&label=test&gclid=test&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div>
 <br>
 <br>
-  <br>
-<div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">without parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div>
+<div style=" background-color: red; padding:10px; width: 300px; height: auto; cursor: pointer;" onclick="window.location.href='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D';">without parameters - https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=&af_adset=&af_keywords=&label=&gclid=&af_dp=yogiyoapp%3A%2F%2Fopen%3Freferrer%3D</div> -->
+<br>
+<br>
+<a href="#" target="_blank">
+      <div class="Promotion_btn" onclick="clickLink()">
+        <div class="btn_content">요기요 앱 다운로드</div>
+      </div>
+</a>
+<script type="text/javascript">
+    var urlParam = window.location.search.replace(/^\?/, '');
+    if (window.location.search.indexOf('referrer=') >= 0) {
+        urlParam = decodeURIComponent(urlParam.replace('referrer=', ''));
+    }
 
-<!-- <script>
-!function(t,e,n,s,a,c,i,o,p){t.AppsFlyerSdkObject=a,t.AF=t.AF||function(){(t.AF.q=t.AF.q||[]).push([Date.now()].concat(Array.prototype.slice.call(arguments)))},t.AF.id=t.AF.id||i,t.AF.plugins={},o=e.createElement(n),p=e.getElementsByTagName(n)[0],o.async=1,o.src="https://websdk.appsflyer.com?"+(c.length>0?"st="+c.split(",").sort().join(",")+"&":"")+(i.length>0?"af_id="+i:""),p.parentNode.insertBefore(o,p)}(window,document,"script",0,"AF","banners",{banners: {key: "842fe190-b2ba-4e41-9fd1-4bda662db9b7"}})
-AF('banners', 'showBanner')
-</script> -->
+    $.extend({
+        getUrlVars: function(){
+            var vars = [], hash;
+            var hashes =window.location.href.slice(window.location.href.indexOf('?') +1).split('&');
+            for(var i = 0; i < hashes.length; i++) {
+                hash=hashes[i].split( '=');
+                vars.push(hash[0]);
+                vars[hash[0]]=hash[1];
+            }
+            return vars;
+        },
+        getUrlVar: function(name){
+            return $.getUrlVars()[name];
+        }
+    });
+    var campaign_id=$.getUrlVar('utm_campaign') || '';
+    var adgroup_id=$.getUrlVar('utm_source') || '';
+    var creative_id=$.getUrlVar('utm_term') || '';
+    var label_id=$.getUrlVar('utm_id') || '';
+    var gclid=$.getUrlVar('gclid') || '';
+    var d_link=decodeURIComponent($.getUrlVar('deep_link') || 'open');
+    var d_param = d_link.indexOf('?') < 0 ? '?' : '&';
+    var deeplink_id=encodeURIComponent('yogiyoapp://' + d_link + d_param + urlParam + (urlParam ? '&' : '') + 'referrer=' + encodeURIComponent(urlParam));
+    var smartbanner_tracking_link='https://yogiyo.onelink.me/BlI7?pid=bridge_page&c=' + campaign_id + '&af_adset=' + adgroup_id + '&af_keywords=' + creative_id + '&label=' + label_id + '&gclid=' +gclid + '&af_dp=' + deeplink_id;
+
+    function clickLink() {
+        window.location.href = smartbanner_tracking_link;
+    }
+  </script>
 </html>
 
 
